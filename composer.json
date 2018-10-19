@@ -1,0 +1,12 @@
+{
+    "name": "sadio/twig",
+    "authors": [
+        {
+            "name": "Adjagarail",
+            "email": "43035463+Adjagarail@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "~1.0"
+    }
+}

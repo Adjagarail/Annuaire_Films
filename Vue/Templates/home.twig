@@ -1,0 +1,132 @@
+{% extends 'Layout/layout_header.twig' %}
+
+{% block body %}
+<style type='text/css'>
+:root {
+  --jumbotron-padding-y: 3rem;
+}
+
+.jumbotron {
+  padding-top: var(--jumbotron-padding-y);
+  padding-bottom: var(--jumbotron-padding-y);
+  margin-bottom: 0;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: calc(var(--jumbotron-padding-y) * 2);
+    padding-bottom: calc(var(--jumbotron-padding-y) * 2);
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 700;
+      font-family: 'Montserrat';
+    }
+
+    hr.star-light,
+    hr.star-dark {
+      max-width: 15rem;
+      padding: 0;
+      text-align: center;
+      border: none;
+      border-top: solid 0.25rem;
+      margin-top: 2.5rem;
+      margin-bottom: 2.5rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    hr.star-light:after,
+    hr.star-dark:after {
+      position: relative;
+      top: -.8em;
+      display: inline-block;
+      padding: 0 0.25em;
+      content: '\f005';
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      font-size: 2em;
+    }
+
+    hr.star-light {
+      border-color: #fff;
+    }
+
+    hr.star-light:after {
+      color: #fff;
+      background-color: #18BC9C;
+    }
+
+    hr.star-dark {
+      border-color: #2C3E50;
+    }
+
+    hr.star-dark:after {
+      color: #2C3E50;
+      background-color: white;
+    }
+</style>
+<main role="main">
+<section class="portfolio text-center" id="portfolio">
+    <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0">Les Sorties de la semaine</h2>
+        <hr class="star-dark mb-5">
+        <div class="row">
+    <div class="album py-5 bg-light">
+
+                <div class="row text-justify">
+                    {% for tutoriel in tutoriels %}
+        <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src={{tutoriel.ImageUrl}}>
+        <div class="card-body">
+        <h5 class="card-title text-center"> {{tutoriel.Titre}} </h5>
+        <p class="card-text"> {{tutoriel.Resume}} </p>
+        <a href="#" class="btn btn-primary">En Savoir Plus</a>
+    </div>
+</div>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+<footer class="container">
+    <p class="float-right">
+        <a href="#">Back to top</a>
+    </p>
+    <p>&copy; 2017-2018 Company, Inc. &middot;
+        <a href="#">Privacy</a>
+        &middot;
+        <a href="#">Terms</a>
+    </p>
+</footer>
+{% endblock %}
